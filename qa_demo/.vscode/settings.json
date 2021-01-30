@@ -1,0 +1,4 @@
+{
+    "python.formatting.provider": "black",
+    "python.pythonPath": "/home/wilo/Projects/Avalith/Workshop/QA-Workshop/env/bin/python"
+}
