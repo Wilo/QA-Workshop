@@ -13,7 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.contrib import admin
+from django.conf.urls.static import static
 from django.urls import path
 
 urlpatterns = [
@@ -23,3 +25,5 @@ urlpatterns = [
 admin.site.site_header = "QA Demo Admin"
 admin.site.site_title = "QA Demo Admin Portal"
 admin.site.index_title = "Bienvenidxs al Portal QA Demo"
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
