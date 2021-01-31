@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:alpine
+    environment:
+      - POSTGRES_DB=catalog
+      - POSTGRES_USER=catalog
+      - POSTGRES_PASSWORD=my_strong_and_secret_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - "$PWD/volumes/postgresql:/var/lib/postgresql"
+      - "$PWD/volumes/postgresql_data:/var/lib/postgresql/data"
+    networks:
+      - bridgenetwork
+
+networks:
+  bridgenetwork:
+    driver: bridge
+
+volumes:
+  postgresql:
+  postgresql_data:
