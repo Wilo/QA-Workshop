@@ -28,9 +28,6 @@ class PostgreSQLPipeline:
         self.connection.close()
 
     def process_item(self, item, spider):
-        # import ipdb
-
-        # ipdb.set_trace()
 
         self.cur.execute(
             """INSERT INTO public.product_catalog
